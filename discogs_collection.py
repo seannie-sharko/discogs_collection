@@ -31,7 +31,7 @@ def get_record_collection(user):
     table.add_column("Artist", justify="left", style="cyan")
     table.add_column("Album", justify="left", style="green")
     table.add_column("Format", justify="left", style="red")
-    with CONSOLE.status('Pulling your collection...', spinner='dots11'):
+    with CONSOLE.status('Pulling your collection...', spinner='bouncingBall'):
         for item in user.collection_folders[0].releases:
             if item.release.artists[0].name in record_collection:
                 record_collection[item.release.artists[0].name].update({
