@@ -32,7 +32,6 @@ def get_record_collection(user):
     table.add_column("Album", justify="left", style="green")
     table.add_column("Year", justify="left", style="yellow")
     table.add_column("Format", justify="left", style="red")
-    table.add_column("Value", justify="left", style="purple")
     with CONSOLE.status('Gathering your collection...', spinner='bouncingBall'):
         for item in user.collection_folders[0].releases:
             if item.release.artists[0].name in record_collection:
@@ -40,7 +39,6 @@ def get_record_collection(user):
                     item.release.title: ({
                         'year': item.release.year,
                         'format': item.release.formats[0]['name'],
-                        'value': item.release.price_suggestions.mint,
                     })
                 })
             else:
@@ -49,7 +47,6 @@ def get_record_collection(user):
                         item.release.title: ({
                             'year': item.release.year,
                             'format': item.release.formats[0]['name'],
-                            'value': item.release.price_suggestions.mint,
                         })
                     })
                 })
@@ -68,7 +65,6 @@ def get_record_collection(user):
                               album_name,
                               str(rformat['year']),
                               rformat['format'],
-                              str(rformat['value']),
                               )
     CONSOLE.print(table)
     CONSOLE.print(user.collection_folders[0].count)
