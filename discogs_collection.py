@@ -1,3 +1,8 @@
+"""
+This is a simple script to pull your record collection
+from Discogs and output it in a table.
+"""
+
 from collections import OrderedDict
 from rich.console import Console
 from rich.table import Table
@@ -16,6 +21,11 @@ def get_user_auth():
 
 
 def get_record_collection(user):
+
+    #
+    # Created a dict to allow more data control as the 
+    # discogs and rich Classes can be restrictive
+    #
     record_collection = {}
     table = Table(title="Album Collection")
     table.add_column("Artist", justify="left", style="cyan")
@@ -37,8 +47,14 @@ def get_record_collection(user):
                 })
             })
 
+    #
+    # Alphabetize Artists as keys
+    #
     record_collection = OrderedDict(sorted(record_collection.items()))
 
+    #
+    # Format data and add to table
+    #
     for artist_name, album_values in record_collection.items():
         for album_name, rformat in album_values.items():
             table.add_row(artist_name,
