@@ -27,7 +27,7 @@ def get_record_collection(user):
     # discogs and rich Classes can be restrictive
     #
     record_collection = {}
-    table = Table(title="Album Collection", show_lines=True)
+    table = Table(title="Album Collection")
     table.add_column("Artist", justify="left", style="cyan")
     table.add_column("Album", justify="left", style="green")
     table.add_column("Year", justify="left", style="yellow")
