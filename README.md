@@ -31,6 +31,7 @@
 ## Requirements:
 - Discogs account
 - Create an API token [here](https://www.discogs.com/settings/developers)
+- pip install -r requirements.txt
 ```
 pip install discogs_client
 ```
