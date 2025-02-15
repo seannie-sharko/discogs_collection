@@ -1,1 +1,3 @@
-user_token = 'copy-pasta-string-here'
+import os
+
+user_token = os.getenv("DISCOGS_TOKEN")
